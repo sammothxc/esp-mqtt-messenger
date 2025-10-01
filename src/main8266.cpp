@@ -26,11 +26,6 @@
 /////////////////////////////
 #include <Arduino.h>
 #include <Wire.h>
-#include <SSD1306Wire.h>
-#include <ESP8266WiFi.h>
-#include <ArduinoOTA.h>
-#include <DNSServer.h>
-#include <ESP8266WebServer.h>
 #include <WiFiManager.h>
 #include "OpenWeatherMapCurrent.h"
 #include <JsonListener.h>
@@ -38,6 +33,14 @@
 #include <ESP8266mDNS.h>
 #include <PubSubClient.h>
 #include "secretfile.h"
+#include <ArduinoOTA.h>
+#include <DNSServer.h>
+#if defined (ARDUINO_ARCH_ESP8266) || defined (ARDUINO_ARCH_ESP32)
+#include <SSD1306Wire.h>
+#include <ESP8266WiFi.h>
+
+#include <ESP8266WebServer.h>
+
 //#include "images.h"
 /////////////////////////////
 ///////// CONFIGS ///////////
